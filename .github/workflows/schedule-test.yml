@@ -1,0 +1,13 @@
+name: 定时测试
+
+on:
+  schedule:
+    - cron: "17 8 * * *"  # 北京时间 16:17，测试用
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 输出时间
+        run: echo "定时触发成功！当前时间: $(date -u)"
